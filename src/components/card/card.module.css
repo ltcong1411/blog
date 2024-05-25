@@ -5,24 +5,24 @@
     gap: 50px;
 }
 
-.imageContainer{
+.imageContainer {
     flex: 1;
     height: 350px;
     position: relative;
 }
 
-.image{
+.image {
     object-fit: cover;
 }
 
-.textContainer{
+.textContainer {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.date{
+.date {
     color: gray;
 }
 
@@ -31,14 +31,20 @@
     font-weight: 500;
 }
 
-.desc{
+.desc {
     font-size: 18px;
     font-weight: 300;
     color: var(--softTextColor);
 }
 
-.link{
+.link {
     border-bottom: 1px solid crimson;
     width: max-content;
     padding: 2px 0px;
+}
+
+@media screen and (max-width: 1024px) {
+    .imageContainer {
+        display: none;
+    }
 }
