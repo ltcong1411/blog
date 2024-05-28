@@ -1,5 +1,6 @@
 import styles from "./singlePage.module.css"
 import Menu from "@/components/menu/Menu";
+import Comments from "@/components/comments/Comments";
 import Image from "next/image";
 
 const SinglePage = () => {
@@ -38,6 +39,9 @@ const SinglePage = () => {
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero recusandae odit animi voluptatibus consequatur beatae tenetur amet velit deserunt dicta, ad excepturi doloremque. Ut placeat, a illum totam eaque labore!
                         </p>
+                    </div>
+                    <div className={styles.comments}>
+                        <Comments />
                     </div>
                 </div>
                 <Menu />
