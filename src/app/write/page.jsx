@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import styles from "./writePage.module.css";
 import Image from "next/image";
-// import ReactQuill from "react-quill";
+import styles from "./writePage.module.css";
+import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -14,27 +13,25 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import dynamic from "next/dynamic";
-
-const storage = getStorage(app);
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-
+import ReactQuill from "react-quill";
 
 const WritePage = () => {
   const { status } = useSession();
-
   const router = useRouter();
 
-  const [file, setFile] = useState(null);
   const [open, setOpen] = useState(false);
+  const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
+  const [catSlug, setCatSlug] = useState("");
 
   useEffect(() => {
+    const storage = getStorage(app);
     const upload = () => {
       const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
+
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       uploadTask.on(
@@ -52,17 +49,7 @@ const WritePage = () => {
               break;
           }
         },
-        (error) => {
-          switch (error.code) {
-            case "storage/unauthorized":
-              break;
-            case "storage/canceled":
-              break;
-
-            case "storage/unknown":
-              break;
-          }
-        },
+        (error) => {},
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
@@ -75,7 +62,7 @@ const WritePage = () => {
   }, [file]);
 
   if (status === "loading") {
-    return <div style={styles.loading}>Loading...</div>;
+    return <div className={styles.loading}>Loading...</div>;
   }
 
   if (status === "unauthenticated") {
@@ -98,11 +85,14 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: "style",
+        catSlug: catSlug || "style", //If not selected, choose the general category
       }),
     });
 
-    console.log(res);
+    if (res.status === 200) {
+      const data = await res.json();
+      router.push(`/posts/${data.slug}`);
+    }
   };
 
   return (
@@ -113,7 +103,14 @@ const WritePage = () => {
         className={styles.input}
         onChange={(e) => setTitle(e.target.value)}
       />
-      {/* TODO: ADD CATEGORY */}
+      <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
+        <option value="style">style</option>
+        <option value="fashion">fashion</option>
+        <option value="food">food</option>
+        <option value="culture">culture</option>
+        <option value="travel">travel</option>
+        <option value="coding">coding</option>
+      </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="" width={16} height={16} />
@@ -144,7 +141,7 @@ const WritePage = () => {
           theme="bubble"
           value={value}
           onChange={setValue}
-          placeholder="Tell your story ..."
+          placeholder="Tell your story..."
         />
       </div>
       <button className={styles.publish} onClick={handleSubmit}>

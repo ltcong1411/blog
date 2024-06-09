@@ -9,7 +9,7 @@ const getData = async () => {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error("Failed");
   }
 
   return res.json();
@@ -23,7 +23,7 @@ const CategoryList = async () => {
       <div className={styles.categories}>
         {data?.map((item) => (
           <Link
-            href={`/blog?cat=style`}
+            href="/blog?cat=style"
             className={`${styles.category} ${styles[item.slug]}`}
             key={item._id}
           >
