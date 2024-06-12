@@ -3,6 +3,7 @@ import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import Code from '@editorjs/code';
 import SimpleImage from '@editorjs/simple-image';
+import editorjsCodecup from '@calumk/editorjs-codecup';
 import styles from './editor.module.css';
 import editorjsHTML from 'editorjs-html';
 
@@ -17,7 +18,7 @@ const Editor = ({ onChange }) => {
         holder: 'editorjs',
         tools: {
           header: Header,
-          code: Code,
+          code: editorjsCodecup,
           image: SimpleImage,
         },
         onChange: async () => {

@@ -33,6 +33,26 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@bomdi/codebox@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@bomdi/codebox/-/codebox-2.0.0.tgz#abddc7aa556c5a47458dd3bcdd9ab299bafb6f99"
+  integrity sha512-t1xjfur4wAWfKsoS+KkeARUVxBM43QwIMVxqEmhEhyCI7ixhFSBtda8FWZ9udk/+SRdM6gXPaxd2/yUQfEuDbA==
+
+"@calumk/codecup@^1.8.1":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@calumk/codecup/-/codecup-1.9.2.tgz#f807282cec68f09a8acd986bae8a336ca1a260b8"
+  integrity sha512-sD0uMwA8FrviwOEGheek9Vftj4oa//y9G3Kl00dt8nN+r0EdcoeWrUX2LtD/FjSmqaeKY9QM+A+ZM6vTdN07QQ==
+  dependencies:
+    "@types/prismjs" "^1.9.1"
+    prismjs "^1.29.0"
+
+"@calumk/editorjs-codecup@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@calumk/editorjs-codecup/-/editorjs-codecup-1.1.1.tgz#78e1fea7db23d244dd975b3d76056075366559cd"
+  integrity sha512-j2k1eK4IEl3zXX7fkC+R8uIkeEV9Nd/m8oDPcdFaRCBYBkZxZpPbP66csWlPzRjirKnimxDT8uDLtgEmLf5iOQ==
+  dependencies:
+    "@calumk/codecup" "^1.8.1"
+
 "@codexteam/icons@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@codexteam/icons/-/icons-0.0.5.tgz#d17f39b6a0497c6439f57dd42711817a3dd3679c"
@@ -691,6 +711,11 @@
   version "20.5.7"
   resolved "https://registry.npmjs.org/@types/node/-/node-20.5.7.tgz"
   integrity sha512-dP7f3LdZIysZnmvP3ANJYTSwg+wLLl8p7RqniVlV7j+oXSXAbt9h0WIBFmJy5inWZoX9wZN6eXx+YXd9Rh3RBA==
+
+"@types/prismjs@^1.9.1":
+  version "1.26.4"
+  resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.26.4.tgz#1a9e1074619ce1d7322669e5b46fbe823925103a"
+  integrity sha512-rlAnzkW2sZOjbqZ743IHUhFcvzaGbqijwOu8QZnZCjfQzBqFE3s4lOTJEsxikImav9uzz/42I+O7YUs1mWgMlg==
 
 "@types/quill@^1.3.10":
   version "1.3.10"
@@ -2412,6 +2437,11 @@ prisma@^5.2.0:
   integrity sha512-FfFlpjVCkZwrqxDnP4smlNYSH1so+CbfjgdpioFzGGqlQAEm6VHAYSzV7jJgC3ebtY9dNOhDMS2+4/1DDSM7bQ==
   dependencies:
     "@prisma/engines" "5.2.0"
+
+prismjs@^1.29.0:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
 
 prop-types@^15.8.1:
   version "15.8.1"
