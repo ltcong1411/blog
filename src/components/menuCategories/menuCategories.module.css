@@ -12,15 +12,15 @@
   font-size: 14px;
 }
 
-.categoryItem.style {
+.categoryItem.Data-Structures-And-Algorithms {
   background-color: #57c4ff31;
 }
 
-.categoryItem.fashion {
+.categoryItem.System-Design {
   background-color: #da85c731;
 }
 
-.categoryItem.food {
+.categoryItem.Database {
   background-color: #7fb88133;
 }
 
@@ -28,10 +28,10 @@
   background-color: #ff795736;
 }
 
-.categoryItem.culture {
+.categoryItem.DevOps {
   background-color: #ffb04f45;
 }
 
-.categoryItem.coding {
+.categoryItem.English {
   background-color: #5e4fff31;
 }

@@ -23,15 +23,15 @@
   border-radius: 10px;
 }
 
-.category.style {
+.category.Data-Structures-And-Algorithms {
   background-color: #57c4ff31;
 }
 
-.category.fashion {
+.category.System-Design {
   background-color: #da85c731;
 }
 
-.category.food {
+.category.Database {
   background-color: #7fb88133;
 }
 
@@ -39,11 +39,11 @@
   background-color: #ff795736;
 }
 
-.category.culture {
+.category.DevOps {
   background-color: #ffb04f45;
 }
 
-.category.coding {
+.category.English {
   background-color: #5e4fff31;
 }
 

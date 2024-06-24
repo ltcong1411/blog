@@ -2,6 +2,7 @@ import Menu from "@/components/Menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
+import "tailwindcss/tailwind.css";
 
 const getData = async (slug) => {
   const res = await fetch(`${process.env.BASE_URL}/api/posts/${slug}`, {
@@ -22,7 +23,11 @@ const SinglePage = async ({ params }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.infoContainer}>
+      <div
+        className="text-xl mt-4 max-w-3xl leading-10 prose"
+        dangerouslySetInnerHTML={{ __html: data }}
+      ></div>
+      {/* <div className={styles.infoContainer}>
         <div className={styles.textContainer}>
           <h1 className={styles.title}>{data?.title}</h1>
           <div className={styles.user}>
@@ -54,7 +59,7 @@ const SinglePage = async ({ params }) => {
           </div>
         </div>
         <Menu />
-      </div>
+      </div> */}
     </div>
   );
 };
